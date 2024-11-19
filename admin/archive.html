@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP Orthodontics - Archive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/icon-tp.ico">
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Contenedor Principal -->
+    <div class="flex h-screen">
+
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-900 text-white flex flex-col">
+            <!-- Logo -->
+            <div class="p-6 flex items-center justify-center border-b border-gray-700">
+                <img src="../images/Logo-TP-Orthodontics_-Inc-Blanco-Horizontal.png" width="200px">
+            </div>
+
+            <!-- Modules -->
+            <!-- Users
+            System logs
+            Archive
+            Cases -->
+
+
+            <!-- Menú de Navegación -->
+            <nav class="flex-1 overflow-y-auto mt-4">
+                <ul>
+                    <li>
+                        <a href="./dashboard.html" class="flex items-center py-3 px-6 hover:bg-gray-800">
+                            <i class="fa fa-home"></i>
+                            <span class="ml-3">Dashboard</span>
+                            <span class="bg-blue-500 text-white text-xs px-2 font-semibold rounded">All</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center py-3 px-6 hover:bg-gray-800">
+                            <i class="fa fa-briefcase"></i>
+                            <span class="ml-3">Cases</span>
+                            <span class="bg-yellow-500 text-white text-xs px-2 font-semibold rounded">Tech</span>
+                            <span class="bg-gray-500 text-white text-xs px-2 font-semibold rounded">Doctor</span>
+                        </a>
+                    </li>
+                    <hr>
+                    <li>
+                        <a href="#" class="flex items-center py-3 px-6 hover:bg-gray-800">
+                            <i class="fa fa-users"></i>
+                            <span class="ml-3">Users</span>
+                            <span class="bg-green-500 text-white text-xs px-2 font-semibold rounded">Admin</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center py-3 px-6 hover:bg-gray-800">
+                            <i class="fa fa-building"></i>
+                            <span class="ml-3">Organizations</span>
+                            <span class="bg-green-500 text-white text-xs px-2 font-semibold rounded">Admin</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./archive.html" class="flex items-center py-3 px-6 hover:bg-gray-800">
+                            <i class="fa fa-folder"></i>
+                            <span class="ml-3">Archive</span>
+                            <span class="bg-green-500 text-white text-xs px-2 font-semibold rounded">Admin</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./logs.html" class="flex items-center py-3 px-6 hover:bg-gray-800">
+                            <i class="fa fa-file-lines"></i>
+                            <span class="ml-3">Logs</span>
+                            <span class="bg-green-500 text-white text-xs px-2 font-semibold rounded">Admin</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Footer -->
+            <div class="border-t border-gray-700">
+                <ul>
+                    <li>
+                        <a href="./user-preferences.html" class="flex items-center space-x-3 py-3 px-6">
+                            <i class="fa fa-gear"></i>
+                            <span class="ml-3">Preferences</span>
+                            <span class="bg-blue-500 text-white text-xs px-2 font-semibold rounded">All</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../login/login.html" class="flex items-center space-x-3 py-3 px-6">
+                            <i class="fa fa-arrow-right-from-bracket"></i>
+                            <span class="ml-3">Logout</span>
+                            <span class="bg-blue-500 text-white text-xs px-2 font-semibold rounded">All</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <div class="flex-1 flex flex-col">
+
+            <!-- Navbar -->
+            <header class="bg-white shadow flex justify-between items-center px-6 py-4">
+                <!-- <input type="text" placeholder="Search..." class="border rounded-lg p-2 w-1/3 focus:outline-none"> -->
+
+                <div class="flex items-center space-x-4">
+                    <button>
+                        <i class="fa fa-bell"></i>
+                    </button>
+                    <img src="../images/avatar-femenino.png" alt="User Avatar" class="h-10 w-10 rounded-full">
+                    <span>Omar Trejo</span>
+                </div>
+            </header>
+
+            <!-- Área de Contenido -->
+            <main class="flex-1 bg-gray-100 p-6">
+                <div class="w-full max-w-5xl bg-white p-8 rounded-xl shadow-lg">
+                    <!-- Título -->
+                    <h1 class="text-2xl font-bold text-gray-800 mb-6">Archive</h1>
+
+                    <!-- Selector de vista -->
+                    <div class="flex justify-end mb-6">
+                        <button id="toggleViewBtn"
+                            class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300">
+                            Change view to card
+                        </button>
+                    </div>
+
+                    <!-- Tabs para los módulos -->
+                    <div class="flex mb-6 border-b border-gray-200">
+                        <button
+                            class="px-4 py-2 text-gray-600 font-medium border-b-2 border-transparent hover:text-blue-500 hover:border-blue-500 focus:outline-none focus:text-blue-500 focus:border-blue-500"
+                            onclick="switchTab('cases')">
+                            Cases
+                        </button>
+                        <button
+                            class="px-4 py-2 text-gray-600 font-medium border-b-2 border-transparent hover:text-blue-500 hover:border-blue-500 focus:outline-none focus:text-blue-500 focus:border-blue-500"
+                            onclick="switchTab('organizations')">
+                            Organizations
+                        </button>
+                        <button
+                            class="px-4 py-2 text-gray-600 font-medium border-b-2 border-transparent hover:text-blue-500 hover:border-blue-500 focus:outline-none focus:text-blue-500 focus:border-blue-500"
+                            onclick="switchTab('users')">
+                            Users
+                        </button>
+                    </div>
+
+                    <!-- Contenedor de tablas y tarjetas -->
+                    <div id="content-container">
+                        <!-- Tabla de Casos -->
+                        <div id="cases" class="hidden">
+                            <h2 class="text-xl font-semibold text-gray-700 mb-4">Deleted cases</h2>
+                            <!-- Tabla -->
+                            <div class="view-table">
+                                <div class="overflow-x-auto">
+                                    <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow">
+                                        <thead class="bg-gray-50">
+                                            <tr>
+                                                <th
+                                                    class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">
+                                                    Date</th>
+                                                <th
+                                                    class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">
+                                                    User</th>
+                                                <th
+                                                    class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">
+                                                    Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-200">
+                                            <tr>
+                                                <td class="px-6 py-4 text-sm text-gray-900">2024-11-17</td>
+                                                <td class="px-6 py-4 text-sm text-gray-900">Admin</td>
+                                                <td class="px-6 py-4 text-sm">
+                                                    <button
+                                                        class="px-3 py-2 text-blue-600 bg-blue-100 rounded-md hover:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-300">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 inline-block" fill="none" viewBox="0 0 24 24"
+                                                            stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M4.5 12h15m-7.5 7.5l-7.5-7.5 7.5-7.5" />
+                                                        </svg>
+                                                        Recovery
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <!-- Más filas si es necesario -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Vista Card -->
+                            <div class="view-card hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                <div class="p-4 border rounded-lg shadow bg-gray-50">
+                                    <p class="text-sm font-semibold text-gray-700 mb-2">Fecha: <span
+                                            class="font-normal">2024-11-17</span></p>
+                                    <p class="text-sm font-semibold text-gray-700 mb-4">Usuario: <span
+                                            class="font-normal">Admin</span></p>
+                                    <button
+                                        class="w-full px-3 py-2 text-blue-600 bg-blue-100 rounded-md hover:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-300">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M4.5 12h15m-7.5 7.5l-7.5-7.5 7.5-7.5" />
+                                        </svg>
+                                        Restablecer
+                                    </button>
+                                </div>
+                                <!-- Más tarjetas si es necesario -->
+                            </div>
+                        </div>
+
+                        <!-- Tabla de Organizaciones -->
+                        <div id="organizations" class="hidden">
+                            <h2 class="text-xl font-semibold text-gray-700 mb-4">Deleted organizations</h2>
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow">
+                                    <thead class="bg-gray-50">
+                                        <tr>
+                                            <th class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">
+                                                Date</th>
+                                            <th class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">
+                                                User</th>
+                                            <th class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">
+                                                Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-200">
+                                        <tr>
+                                            <td class="px-6 py-4 text-sm text-gray-900">2024-11-16</td>
+                                            <td class="px-6 py-4 text-sm text-gray-900">User123</td>
+                                            <td class="px-6 py-4 text-sm">
+                                                <button
+                                                    class="px-3 py-2 text-blue-600 bg-blue-100 rounded-md hover:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-300">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2" d="M4.5 12h15m-7.5 7.5l-7.5-7.5 7.5-7.5" />
+                                                    </svg>
+                                                    Recovery
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Tabla de Usuarios -->
+                        <div id="users" class="hidden">
+                            <h2 class="text-xl font-semibold text-gray-700 mb-4">Deleted users</h2>
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow">
+                                    <thead class="bg-gray-50">
+                                        <tr>
+                                            <th class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">
+                                                Date</th>
+                                            <th class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">
+                                                User</th>
+                                            <th class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">
+                                                Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-200">
+                                        <tr>
+                                            <td class="px-6 py-4 text-sm text-gray-900">2024-11-15</td>
+                                            <td class="px-6 py-4 text-sm text-gray-900">Admin</td>
+                                            <td class="px-6 py-4 text-sm">
+                                                <button
+                                                    class="px-3 py-2 text-blue-600 bg-blue-100 rounded-md hover:bg-blue-200 focus:outline-none focus:ring focus:ring-blue-300">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2" d="M4.5 12h15m-7.5 7.5l-7.5-7.5 7.5-7.5" />
+                                                    </svg>
+                                                    Recovery
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function switchTab(tabId) {
+        // Ocultar todos los contenedores
+        const tabs = document.querySelectorAll("#content-container > div");
+        tabs.forEach(tab => tab.classList.add("hidden"));
+
+        // Mostrar solo el contenedor correspondiente al tabId
+        const activeTab = document.getElementById(tabId);
+        if (activeTab) {
+            activeTab.classList.remove("hidden");
+        } else {
+            console.error(`No se encontró el tab con ID: ${tabId}`);
+        }
+    }
+
+
+    document.getElementById("toggleViewBtn").addEventListener("click", () => {
+        const tables = document.querySelectorAll(".view-table");
+        const cards = document.querySelectorAll(".view-card");
+        const btn = document.getElementById("toggleViewBtn");
+
+        tables.forEach(table => table.classList.toggle("hidden"));
+        cards.forEach(card => card.classList.toggle("hidden"));
+
+        if (btn.textContent.includes("Vista Card")) {
+            btn.textContent = "Cambiar a Vista Tabla";
+        } else {
+            btn.textContent = "Cambiar a Vista Card";
+        }
+    });
+</script>
