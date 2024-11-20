@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TP Orthodontics - Manage ACL</title>
+    <title>TP Orthodontics - Case add</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/icon-tp.ico">
@@ -152,87 +152,74 @@
             <!-- Área de Contenido -->
             <main class="flex-1 bg-gray-100 p-6">
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h2 class="text-2xl font-bold mb-6">Manage ACL</h2>
+                    <h2 class="text-2xl font-bold mb-6">Case files</h2>
                     <form>
+                        <div class="col-span-full">
+                            <label for="cover-photo" class="block text-sm/6 font-medium text-gray-900">Upload files</label>
+                            <div
+                                class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                                <div class="text-center">
+                                    <svg class="mx-auto size-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor"
+                                        aria-hidden="true" data-slot="icon">
+                                        <path fill-rule="evenodd"
+                                            d="M1.5 6a2.25 2.25 0 0 1 2.25-2.25h16.5A2.25 2.25 0 0 1 22.5 6v12a2.25 2.25 0 0 1-2.25 2.25H3.75A2.25 2.25 0 0 1 1.5 18V6ZM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0 0 21 18v-1.94l-2.69-2.689a1.5 1.5 0 0 0-2.12 0l-.88.879.97.97a.75.75 0 1 1-1.06 1.06l-5.16-5.159a1.5 1.5 0 0 0-2.12 0L3 16.061Zm10.125-7.81a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <div class="mt-4 flex text-sm/6 text-gray-600">
+                                        <label for="file-upload"
+                                            class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
+                                            <span>Upload a file</span>
+                                            <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                                        </label>
+                                        <p class="pl-1">or drag and drop</p>
+                                    </div>
+                                    <p class="text-xs/5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-end pt-6 space-x-4">
+                            <button type="button"
+                                class="bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-700">Cancel</button>
+                            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"><i
+                                    class="fa fa-save"></i> Save</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="container mx-auto p-4">
+                        <h1 class="text-2xl font-bold mb-4">File Directory</h1>
                         <table class="min-w-full bg-white border border-gray-200">
                             <thead>
                                 <tr>
-                                    <th class="py-2 px-4 border-b">Module</th>
-                                    <th class="py-2 px-4 border-b">Submodule</th>
-                                    <th class="py-2 px-4 border-b">Tech</th>
-                                    <th class="py-2 px-4 border-b">Admin</th>
+                                    <th class="py-2 px-4 border-b">File Name</th>
+                                    <th class="py-2 px-4 border-b">Size</th>
+                                    <th class="py-2 px-4 border-b">Date Modified</th>
+                                    <th class="py-2 px-4 border-b">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Users Module -->
                                 <tr>
-                                    <td class="py-2 px-4 border-b" rowspan="4">Users</td>
-                                    <td class="py-2 px-4 border-b">List Users</td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="tech-users-list" name="tech-users-list">
-                                    </td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="admin-users-list" name="admin-users-list">
+                                    <td class="py-2 px-4 border-b">Document1.pdf</td>
+                                    <td class="py-2 px-4 border-b">1.2 MB</td>
+                                    <td class="py-2 px-4 border-b">2024-11-18</td>
+                                    <td class="py-2 px-4 border-b">
+                                        <button class="bg-blue-500 text-white px-2 py-1 rounded">View</button>
+                                        <button class="bg-green-500 text-white px-2 py-1 rounded">Download</button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="py-2 px-4 border-b">Create User</td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="tech-users-create" name="tech-users-create">
-                                    </td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="admin-users-create" name="admin-users-create">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b">Manage ACL's</td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="tech-users-manage-acl" name="tech-users-manage-acl">
-                                    </td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="admin-users-manage-acl"
-                                            name="admin-users-manage-acl">
+                                    <td class="py-2 px-4 border-b">Image2.png</td>
+                                    <td class="py-2 px-4 border-b">500 KB</td>
+                                    <td class="py-2 px-4 border-b">2024-11-17</td>
+                                    <td class="py-2 px-4 border-b">
+                                        <button class="bg-blue-500 text-white px-2 py-1 rounded">View</button>
+                                        <button class="bg-green-500 text-white px-2 py-1 rounded">Download</button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b">User Logs</td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="tech-users-logs" name="tech-users-logs">
-                                    </td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="admin-users-logs" name="admin-users-logs">
-                                    </td>
-                                </tr>
-                                <!-- Organizations Module -->
-                                <tr>
-                                    <td class="py-2 px-4 border-b" rowspan="2">Organizations</td>
-                                    <td class="py-2 px-4 border-b">List Organizations</td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="tech-orgs-list" name="tech-orgs-list">
-                                    </td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="admin-orgs-list" name="admin-orgs-list">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b">Create Organization</td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="tech-orgs-create" name="tech-orgs-create">
-                                    </td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="admin-orgs-create" name="admin-orgs-create">
-                                    </td>
-                                </tr>
-                                <!-- Additional Modules can be added similarly -->
+                                <!-- More rows as needed -->
                             </tbody>
                         </table>
-                        <div class="flex justify-end space-x-4 mt-6">
-                            <button type="button"
-                                class="bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-700">Cancel</button>
-                            <button type="submit"
-                                class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"><i class="fa fa-save"></i> Save</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </main>
         </div>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TP Orthodontics - Manage ACL</title>
+    <title>TP Orthodontics - Case add</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/icon-tp.ico">
@@ -152,81 +152,89 @@
             <!-- Área de Contenido -->
             <main class="flex-1 bg-gray-100 p-6">
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h2 class="text-2xl font-bold mb-6">Manage ACL</h2>
+                    <h2 class="text-2xl font-bold mb-6">Case Information</h2>
                     <form>
-                        <table class="min-w-full bg-white border border-gray-200">
-                            <thead>
-                                <tr>
-                                    <th class="py-2 px-4 border-b">Module</th>
-                                    <th class="py-2 px-4 border-b">Submodule</th>
-                                    <th class="py-2 px-4 border-b">Tech</th>
-                                    <th class="py-2 px-4 border-b">Admin</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Users Module -->
-                                <tr>
-                                    <td class="py-2 px-4 border-b" rowspan="4">Users</td>
-                                    <td class="py-2 px-4 border-b">List Users</td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="tech-users-list" name="tech-users-list">
-                                    </td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="admin-users-list" name="admin-users-list">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b">Create User</td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="tech-users-create" name="tech-users-create">
-                                    </td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="admin-users-create" name="admin-users-create">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b">Manage ACL's</td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="tech-users-manage-acl" name="tech-users-manage-acl">
-                                    </td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="admin-users-manage-acl"
-                                            name="admin-users-manage-acl">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b">User Logs</td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="tech-users-logs" name="tech-users-logs">
-                                    </td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="admin-users-logs" name="admin-users-logs">
-                                    </td>
-                                </tr>
-                                <!-- Organizations Module -->
-                                <tr>
-                                    <td class="py-2 px-4 border-b" rowspan="2">Organizations</td>
-                                    <td class="py-2 px-4 border-b">List Organizations</td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="tech-orgs-list" name="tech-orgs-list">
-                                    </td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="admin-orgs-list" name="admin-orgs-list">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b">Create Organization</td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="tech-orgs-create" name="tech-orgs-create">
-                                    </td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="admin-orgs-create" name="admin-orgs-create">
-                                    </td>
-                                </tr>
-                                <!-- Additional Modules can be added similarly -->
-                            </tbody>
-                        </table>
-                        <div class="flex justify-end space-x-4 mt-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="case-name" class="block text-gray-700 font-medium mb-2">Case Name</label>
+                                <input type="text" id="case-name" name="case-name" placeholder="Enter the title for the case name"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 p-2"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="specifications" class="block text-gray-700 font-medium mb-2">Technical  Specifications</label>
+                                <textarea id="specifications" name="specifications" rows="3" placeholder="Enter resolution, material type or entrer the scaling factor"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 p-2"
+                                    required></textarea>
+                            </div>
+                            <div>
+                                <label for="client-id" class="block text-gray-700 font-medium mb-2">Client ID (For 3D Viewer)</label>
+                                <input type="text" id="client-id" name="client-id" placeholder="Enter the id to get the 3D model"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 p-2"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="fg" class="block text-gray-700 font-medium mb-2">Foreground (For 3D Viewer)</label>
+                                <input type="text" id="fg" name="fg" placeholder="Enter the fg to get the 3D model"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 p-2"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="bg" class="block text-gray-700 font-medium mb-2">Background (For 3D Viewer)</label>
+                                <input type="text" id="bg" name="bg" placeholder="Enter the bg to get the 3D model"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 p-2"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="p" class="block text-gray-700 font-medium mb-2">Password (For 3D Viewer)</label>
+                                <input type="text" id="p" name="p" placeholder="Enter the p to get the 3D model"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 p-2"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="organization" class="block text-gray-700 font-medium mb-2">Organization</label>
+                                <select id="organization" name="organization"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 p-2"
+                                    required>
+                                    <option value="MX">TP Orthodontics MX</option>
+                                    <option value="USA">TP Orthodontics USA</option>
+                                    <option value="CAN">TP Orthodontics CAN</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="doctorassigned" class="block text-gray-700 font-medium mb-2">Doctor Assigned</label>
+                                <select id="doctorassigned" name="doctorassigned"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 p-2"
+                                    required>
+                                    <option value="1">Dr. Smith</option>
+                                    <option value="2">Dr. Johnson</option>
+                                    <option value="3">Dr. Williams	</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="tech-id" class="block text-gray-700 font-medium mb-2">Tech Assigned</label>
+                                <select id="tech-id" name="tech-id"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 p-2"
+                                    required>
+                                    <option value="Tech">Tech 1</option>
+                                    <option value="Doctor">Tech 2</option>
+                                    <option value="Admin">Tech 3</option>
+                                </select>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="observations" class="block text-gray-700 font-medium mb-2">Observations</label>
+                                <textarea id="observations" name="observations" rows="3" placeholder="Enter any observations to tech"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 p-2"
+                                    required></textarea>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="comments" class="block text-gray-700 font-medium mb-2">General Comments</label>
+                                <textarea id="comments" name="comments" rows="3" placeholder="Enter general comments"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 p-2"
+                                    required></textarea>
+                            </div>
+                        </div>
+                        <div class="flex justify-end space-x-4">
                             <button type="button"
                                 class="bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-700">Cancel</button>
                             <button type="submit"

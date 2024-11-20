@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TP Orthodontics - Users list</title>
+  <title>TP Orthodontics - Organizations list</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="icon" type="image/png" sizes="32x32" href="../images/icon-tp.ico">
@@ -129,17 +129,17 @@
       </header>
 
       <!-- Área de Contenido -->
-      <main class="flex-1 bg-gray-100 p-6 max-w-7xl mx-auto">
+      <main class="flex-1 bg-gray-100 p-6">
         <div class="bg-white p-6 rounded-lg shadow-lg">
-            <h2 class="text-2xl font-bold mb-4">Users</h2>
+            <h2 class="text-2xl font-bold mb-4">Organizations</h2>
             <div class="flex justify-between items-center mb-4">
                 <input type="text" placeholder="Search..." class="border border-gray-300 p-2 rounded w-1/3">
                 <div class="flex space-x-4">
                     <select class="border border-gray-300 p-2 rounded">
-                        <option value="">Filter by Role</option>
-                        <option value="Tech">Tech</option>
-                        <option value="Doctor">Doctor</option>
-                        <option value="Admin">Admin</option>
+                        <option value="">Filter by Country</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="USA">USA</option>
+                        <option value="Canada">Canada</option>
                     </select>
                     <select class="border border-gray-300 p-2 rounded">
                         <option value="">Filter by Status</option>
@@ -152,49 +152,35 @@
                 <thead>
                     <tr>
                         <th class="py-2 px-4 border-b">ID</th>
-                        <th class="py-2 px-4 border-b">First Name</th>
-                        <th class="py-2 px-4 border-b">Last Name</th>
-                        <th class="py-2 px-4 border-b">Email</th>
-                        <th class="py-2 px-4 border-b">Role</th>
-                        <th class="py-2 px-4 border-b">Date/Time</th>
-                        <th class="py-2 px-4 border-b">Last Login</th>
-                        <th class="py-2 px-4 border-b">MFA Active</th>
+                        <th class="py-2 px-4 border-b">Name</th>
+                        <th class="py-2 px-4 border-b">Common Name</th>
+                        <th class="py-2 px-4 border-b">Date</th>
                         <th class="py-2 px-4 border-b">Status</th>
-                        <th class="py-2 px-4 border-b">Organization</th>
+                        <th class="py-2 px-4 border-b">Country</th>
                         <th class="py-2 px-4 border-b">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="py-2 px-4 border-b"><a href="/details/123456" class="text-blue-500 hover:underline">123456</a></td>
-                        <td class="py-2 px-4 border-b">John</td>
-                        <td class="py-2 px-4 border-b">Doe</td>
-                        <td class="py-2 px-4 border-b">john.doe@example.com</td>
-                        <td class="py-2 px-4 border-b">Tech</td>
-                        <td class="py-2 px-4 border-b">2024-11-18 14:23:45</td>
-                        <td class="py-2 px-4 border-b">2024-11-18 14:23:45</td>
-                        <td class="py-2 px-4 border-b"><i class="fas fa-check text-green-500"></i></td>
-                        <td class="py-2 px-4 border-b"><span class="text-green-500">Active</span></td>
+                        <td class="py-2 px-4 border-b"><a href="./organization-detail.html?id=123456" class="text-blue-500 hover:underline">123456</a></td>
                         <td class="py-2 px-4 border-b">Organization A</td>
+                        <td class="py-2 px-4 border-b">Org A</td>
+                        <td class="py-2 px-4 border-b">2024-11-18</td>
+                        <td class="py-2 px-4 border-b"><span class="text-green-500">Active</span></td>
+                        <td class="py-2 px-4 border-b">Mexico</td>
                         <td class="py-2 px-4 border-b">
                             <button class="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-700"><i class="fa fa-trash"></i></button>
-                            <button class="bg-yellow-500 text-white py-1 px-3 rounded hover:bg-yellow-700"><i class="fa fa-lock"></i></button>
                         </td>
                     </tr>
                     <tr>
-                        <td class="py-2 px-4 border-b"><a href="/details/654321" class="text-blue-500 hover:underline">654321</a></td>
-                        <td class="py-2 px-4 border-b">Jane</td>
-                        <td class="py-2 px-4 border-b">Smith</td>
-                        <td class="py-2 px-4 border-b">jane.smith@example.com</td>
-                        <td class="py-2 px-4 border-b">Doctor</td>
-                        <td class="py-2 px-4 border-b">2024-10-22 09:15:32</td>
-                        <td class="py-2 px-4 border-b">2024-10-22 09:15:32</td>
-                        <td class="py-2 px-4 border-b"><i class="fas fa-times text-red-500"></i></td>
-                        <td class="py-2 px-4 border-b"><span class="text-red-500">Inactive</span></td>
+                        <td class="py-2 px-4 border-b"><a href="./organization-detail.html?id=654321" class="text-blue-500 hover:underline">654321</a></td>
                         <td class="py-2 px-4 border-b">Organization B</td>
+                        <td class="py-2 px-4 border-b">Org B</td>
+                        <td class="py-2 px-4 border-b">2024-10-22</td>
+                        <td class="py-2 px-4 border-b"><span class="text-red-500">Inactive</span></td>
+                        <td class="py-2 px-4 border-b">USA</td>
                         <td class="py-2 px-4 border-b">
                             <button class="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-700"><i class="fa fa-trash"></i></button>
-                            <button class="bg-yellow-500 text-white py-1 px-3 rounded hover:bg-yellow-700"><i class="fa fa-lock"></i></button>
                         </td>
                     </tr>
                     <!-- Add more rows as needed -->
@@ -206,6 +192,7 @@
                 <button class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">Next</button>
             </div>
         </div>
+
       </main>
     </div>
   </div>

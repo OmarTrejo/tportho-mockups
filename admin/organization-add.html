@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TP Orthodontics - Manage ACL</title>
+    <title>TP Orthodontics - Organization add</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/icon-tp.ico">
@@ -152,85 +152,59 @@
             <!-- Área de Contenido -->
             <main class="flex-1 bg-gray-100 p-6">
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h2 class="text-2xl font-bold mb-6">Manage ACL</h2>
+                    <h2 class="text-2xl font-bold mb-6">Organization Information</h2>
                     <form>
-                        <table class="min-w-full bg-white border border-gray-200">
-                            <thead>
-                                <tr>
-                                    <th class="py-2 px-4 border-b">Module</th>
-                                    <th class="py-2 px-4 border-b">Submodule</th>
-                                    <th class="py-2 px-4 border-b">Tech</th>
-                                    <th class="py-2 px-4 border-b">Admin</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Users Module -->
-                                <tr>
-                                    <td class="py-2 px-4 border-b" rowspan="4">Users</td>
-                                    <td class="py-2 px-4 border-b">List Users</td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="tech-users-list" name="tech-users-list">
-                                    </td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="admin-users-list" name="admin-users-list">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b">Create User</td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="tech-users-create" name="tech-users-create">
-                                    </td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="admin-users-create" name="admin-users-create">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b">Manage ACL's</td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="tech-users-manage-acl" name="tech-users-manage-acl">
-                                    </td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="admin-users-manage-acl"
-                                            name="admin-users-manage-acl">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b">User Logs</td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="tech-users-logs" name="tech-users-logs">
-                                    </td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="admin-users-logs" name="admin-users-logs">
-                                    </td>
-                                </tr>
-                                <!-- Organizations Module -->
-                                <tr>
-                                    <td class="py-2 px-4 border-b" rowspan="2">Organizations</td>
-                                    <td class="py-2 px-4 border-b">List Organizations</td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="tech-orgs-list" name="tech-orgs-list">
-                                    </td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="admin-orgs-list" name="admin-orgs-list">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b">Create Organization</td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="tech-orgs-create" name="tech-orgs-create">
-                                    </td>
-                                    <td class="py-2 px-4 border-b text-center">
-                                        <input type="checkbox" id="admin-orgs-create" name="admin-orgs-create">
-                                    </td>
-                                </tr>
-                                <!-- Additional Modules can be added similarly -->
-                            </tbody>
-                        </table>
-                        <div class="flex justify-end space-x-4 mt-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="org-name" class="block text-gray-700 font-medium mb-2">Organization
+                                    Name</label>
+                                <input type="text" id="org-name" name="org-name" placeholder="Enter organization name"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 p-2"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="common-name" class="block text-gray-700 font-medium mb-2">Common
+                                    Name</label>
+                                <input type="text" id="common-name" name="common-name" placeholder="Enter common name"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 p-2"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="country" class="block text-gray-700 font-medium mb-2">Country</label>
+                                <select id="country" name="country"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 p-2"
+                                    required>
+                                    <option value="">Select country</option>
+                                    <option value="Mexico">Mexico</option>
+                                    <option value="USA">USA</option>
+                                    <option value="Canada">Canada</option>
+                                    <!-- Add more countries as needed -->
+                                </select>
+                            </div>
+                            <div>
+                                <label for="state" class="block text-gray-700 font-medium mb-2">State/Province</label>
+                                <input type="text" id="state" name="state" placeholder="Enter state or province"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 p-2"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="city" class="block text-gray-700 font-medium mb-2">City</label>
+                                <input type="text" id="city" name="city" placeholder="Enter city"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 p-2"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="address" class="block text-gray-700 font-medium mb-2">Address</label>
+                                <textarea id="address" name="address" rows="3" placeholder="Enter address"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 p-2"
+                                    required></textarea>
+                            </div>
+                        </div>
+                        <div class="flex justify-end space-x-4">
                             <button type="button"
                                 class="bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-700">Cancel</button>
                             <button type="submit"
-                                class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"><i class="fa fa-save"></i> Save</button>
+                                class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">Save</button>
                         </div>
                     </form>
                 </div>
