@@ -6,6 +6,20 @@
     <title>TP Orthodontics - Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/png" sizes="32x32" href="../images/icon-tp.ico">
+    <script>
+        // Function to toggle password visibility
+        function togglePassword() {
+            const passwordInput = document.getElementById("password");
+            const toggleButton = document.getElementById("toggle-password");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleButton.textContent = "Hide";
+            } else {
+                passwordInput.type = "password";
+                toggleButton.textContent = "Show";
+            }
+        }
+    </script>
 </head>
 <body class="flex items-center justify-center min-h-screen bg-[#111827] ">
     <div class="bg-white shadow-md rounded-lg p-8 max-w-sm w-full">
@@ -18,17 +32,27 @@
         <!-- Form -->
         <form action="mfa-access.html">
             <div class="sm:col-span-4">
-                <label for="email" class="block text-sm/6 font-medium text-gray-900">Email address / Username </label>
+                <label for="email" class="block text-sm font-medium text-gray-900">Email address / Username</label>
                 <div class="mt-2">
-                  <input id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 mb-6 pl-3" placeholder="Enter a email or username">
+                  <input id="email" name="email" type="email" autocomplete="email" required 
+                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm mb-6 pl-3" 
+                         placeholder="Enter an email or username">
                 </div>
-              </div>
-              <div class="sm:col-span-4">
-                <label for="password" class="block text-sm/6 font-medium text-gray-900">Password</label>
-                <div class="mt-2">
-                  <input id="password" name="password" type="password" required minlength="8" autocomplete="new-password" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 mb-6 pl-3" placeholder="Enter a password">
+            </div>
+            <div class="sm:col-span-4 relative">
+                <label for="password" class="block text-sm font-medium text-gray-900">Password</label>
+                <div class="mt-2 relative">
+                  <input id="password" name="password" type="password" required minlength="8" autocomplete="new-password" 
+                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm mb-6 pl-3" 
+                         placeholder="Enter a password">
+                  <button type="button" id="toggle-password" onclick="togglePassword()" 
+                          class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-600">
+                    Show
+                  </button>
                 </div>
-              </div>
+            </div>
+            <!-- Error message placeholder -->
+            <p id="error-message" class="hidden text-red-600 text-sm mb-4">Invalid email or password.</p>
             <!-- Sign In button -->
             <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded">Sign In</button>
         </form>
@@ -36,6 +60,10 @@
         <div class="text-center mt-4">
             <a href="recovery-password.html" class="text-blue-600 hover:underline">Forgot password?</a>
         </div>
+        <div class="text-center mt-2">
+          <span class="text-gray-600">Don't have an account?</span> 
+          <a href="register.html" class="text-indigo-600 hover:underline">Create one here</a>.
+      </div>
     </div>
 </body>
 </html>

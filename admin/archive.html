@@ -49,7 +49,7 @@
                         </a>
                         <ul id="cases-submenu" class="pl-4 mt-2 hidden">
                           <li class="mb-2"><a href="./cases.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-list"></i> List cases</a></li>
-                          <li class="mb-2"><a href="./case-add.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-ticket-alt"></i> Create case</a></li>
+                          <li class="mb-2"><a href="./case-services.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-ticket-alt"></i> Create case</a></li>
                           <li class="mb-2"><a href="./case-3d-model.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-user-edit"></i> Link 3D model</a></li>
                           <li class="mb-2"><a href="./cases-logs.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-file-text"></i> Activy logs</a></li>
                         </ul>
@@ -69,15 +69,15 @@
                         </ul>
                       </li>
                       <li class="mb-4">
-                        <a href="#" class="flex items-center space-x-3 py-3 px-6 rounded hover:bg-gray-800" onclick="toggleMenu('organizations-submenu')"> 
+                        <a href="#" class="flex items-center space-x-3 py-3 px-6 rounded hover:bg-gray-800" onclick="toggleMenu('Country/DCs-submenu')"> 
                           <i class="fa fa-building"></i> 
-                          <span class="ml-3">Organizations</span> 
+                          <span class="ml-3">Country/DCs</span> 
                           <i class="fas fa-chevron-down"></i>
                           <span class="bg-green-500 text-white text-xs px-2 font-semibold rounded">Admin</span>
                         </a>
-                        <ul id="organizations-submenu" class="pl-4 mt-2 hidden">
-                          <li class="mb-2"><a href="./organizations.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-list"></i> List organizations</a></li>
-                          <li class="mb-2"><a href="./organization-add.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-plus"></i> Create organization</a></li>
+                        <ul id="Country/DCs-submenu" class="pl-4 mt-2 hidden">
+                          <li class="mb-2"><a href="./Country/DCs.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-list"></i> List Country/DCs</a></li>
+                          <li class="mb-2"><a href="./Country/DC-add.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-plus"></i> Create Country/DC</a></li>
                         </ul>
                       </li>
                     <li>
@@ -157,8 +157,8 @@
                         </button>
                         <button
                             class="px-4 py-2 text-gray-600 font-medium border-b-2 border-transparent hover:text-blue-500 hover:border-blue-500 focus:outline-none focus:text-blue-500 focus:border-blue-500"
-                            onclick="switchTab('organizations')">
-                            Organizations
+                            onclick="switchTab('Country/DCs')">
+                            Country/DCs
                         </button>
                         <button
                             class="px-4 py-2 text-gray-600 font-medium border-b-2 border-transparent hover:text-blue-500 hover:border-blue-500 focus:outline-none focus:text-blue-500 focus:border-blue-500"
@@ -235,8 +235,8 @@
                         </div>
 
                         <!-- Tabla de Organizaciones -->
-                        <div id="organizations" class="hidden">
-                            <h2 class="text-xl font-semibold text-gray-700 mb-4">Deleted organizations</h2>
+                        <div id="Country/DCs" class="hidden">
+                            <h2 class="text-xl font-semibold text-gray-700 mb-4">Deleted Country/DCs</h2>
                             <div class="overflow-x-auto">
                                 <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow">
                                     <thead class="bg-gray-50">

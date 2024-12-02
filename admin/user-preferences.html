@@ -40,7 +40,7 @@
                         </a>
                         <ul id="cases-submenu" class="pl-4 mt-2 hidden">
                           <li class="mb-2"><a href="./cases.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-list"></i> List cases</a></li>
-                          <li class="mb-2"><a href="./case-add.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-ticket-alt"></i> Create case</a></li>
+                          <li class="mb-2"><a href="./case-services.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-ticket-alt"></i> Create case</a></li>
                           <li class="mb-2"><a href="./case-3d-model.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-user-edit"></i> Link 3D model</a></li>
                           <li class="mb-2"><a href="./cases-logs.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-file-text"></i> Activy logs</a></li>
                         </ul>
@@ -60,15 +60,15 @@
                         </ul>
                       </li>
                       <li class="mb-4">
-                        <a href="#" class="flex items-center space-x-3 py-3 px-6 rounded hover:bg-gray-800" onclick="toggleMenu('organizations-submenu')"> 
+                        <a href="#" class="flex items-center space-x-3 py-3 px-6 rounded hover:bg-gray-800" onclick="toggleMenu('Country/DCs-submenu')"> 
                           <i class="fa fa-building"></i> 
-                          <span class="ml-3">Organizations</span> 
+                          <span class="ml-3">Country/DCs</span> 
                           <i class="fas fa-chevron-down"></i>
                           <span class="bg-green-500 text-white text-xs px-2 font-semibold rounded">Admin</span>
                         </a>
-                        <ul id="organizations-submenu" class="pl-4 mt-2 hidden">
-                          <li class="mb-2"><a href="./organizations.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-list"></i> List organizations</a></li>
-                          <li class="mb-2"><a href="./organization-add.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-plus"></i> Create organization</a></li>
+                        <ul id="Country/DCs-submenu" class="pl-4 mt-2 hidden">
+                          <li class="mb-2"><a href="./Country/DCs.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-list"></i> List Country/DCs</a></li>
+                          <li class="mb-2"><a href="./Country/DC-add.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-plus"></i> Create Country/DC</a></li>
                         </ul>
                       </li>
                     <li>
@@ -180,7 +180,7 @@
                                     class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 p-2"></textarea>
                             </div>
                             <div>
-                                <label for="country" class="block text-sm/6 font-medium text-gray-900">Organization
+                                <label for="country" class="block text-sm/6 font-medium text-gray-900">Country/DC
                                     Name</label>
                                 <div class="mt-2">
                                     <select id="customerid" name="customerid"
@@ -230,19 +230,91 @@
                         <div class="border-b border-gray-900/10 pb-12">
                             <div class="mt-10 space-y-10">
                                 <fieldset>
-                                    <legend class="text-sm/6 font-semibold text-gray-900">By Email</legend>
+                                    <legend class="text-sm/6 font-semibold text-gray-900">Notifications Preferences</legend>
                                     <div class="mt-6 space-y-6">
+                                        <!-- Notifications via Email -->
                                         <div class="relative flex gap-x-3">
                                             <div class="flex h-6 items-center">
-                                                <input id="comments" name="comments" type="checkbox"
+                                                <input id="email-notifications" name="email-notifications" type="checkbox"
                                                     class="size-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                             </div>
                                             <div class="text-sm/6">
-                                                <label for="comments" class="font-medium text-gray-900">Get
-                                                    notifications</label>
-                                                <p class="text-gray-500">Get notified when someones posts a comment,
-                                                    create new case or anything
-                                                    on a posting.</p>
+                                                <label for="email-notifications" class="font-medium text-gray-900">By Email</label>
+                                                <p class="text-gray-500">Get notified via email when a specific event occurs.</p>
+                                            </div>
+                                        </div>
+                        
+                                        <!-- Notifications via WhatsApp -->
+                                        <div class="relative flex gap-x-3">
+                                            <div class="flex h-6 items-center">
+                                                <input id="whatsapp-notifications" name="whatsapp-notifications" type="checkbox"
+                                                    class="size-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                            </div>
+                                            <div class="text-sm/6">
+                                                <label for="whatsapp-notifications" class="font-medium text-gray-900">By WhatsApp</label>
+                                                <p class="text-gray-500">Receive notifications through WhatsApp messages.</p>
+                                            </div>
+                                        </div>
+                        
+                                        <!-- Notifications via SMS -->
+                                        <div class="relative flex gap-x-3">
+                                            <div class="flex h-6 items-center">
+                                                <input id="sms-notifications" name="sms-notifications" type="checkbox"
+                                                    class="size-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                            </div>
+                                            <div class="text-sm/6">
+                                                <label for="sms-notifications" class="font-medium text-gray-900">By SMS</label>
+                                                <p class="text-gray-500">Receive notifications via SMS to your registered phone number.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                        
+                                <!-- Event-specific Notifications -->
+                                <fieldset class="mt-8">
+                                    <legend class="text-sm/6 font-semibold text-gray-900">Notification Events</legend>
+                                    <div class="mt-6 space-y-6">
+                                        <div class="relative flex gap-x-3">
+                                            <div class="flex h-6 items-center">
+                                                <input id="new-case" name="new-case" type="checkbox"
+                                                    class="size-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                            </div>
+                                            <div class="text-sm/6">
+                                                <label for="new-case" class="font-medium text-gray-900">New Case</label>
+                                                <p class="text-gray-500">Get notified when a new case is created.</p>
+                                            </div>
+                                        </div>
+                        
+                                        <div class="relative flex gap-x-3">
+                                            <div class="flex h-6 items-center">
+                                                <input id="new-comment" name="new-comment" type="checkbox"
+                                                    class="size-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                            </div>
+                                            <div class="text-sm/6">
+                                                <label for="new-comment" class="font-medium text-gray-900">New Comment</label>
+                                                <p class="text-gray-500">Get notified when a new comment is added to a case.</p>
+                                            </div>
+                                        </div>
+                        
+                                        <div class="relative flex gap-x-3">
+                                            <div class="flex h-6 items-center">
+                                                <input id="new-assignment" name="new-assignment" type="checkbox"
+                                                    class="size-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                            </div>
+                                            <div class="text-sm/6">
+                                                <label for="new-assignment" class="font-medium text-gray-900">New Assignment</label>
+                                                <p class="text-gray-500">Get notified when a case is assigned to you.</p>
+                                            </div>
+                                        </div>
+                        
+                                        <div class="relative flex gap-x-3">
+                                            <div class="flex h-6 items-center">
+                                                <input id="new-access-request" name="new-access-request" type="checkbox"
+                                                    class="size-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                            </div>
+                                            <div class="text-sm/6">
+                                                <label for="new-access-request" class="font-medium text-gray-900">New Access Request</label>
+                                                <p class="text-gray-500">Get notified when a new access request is submitted.</p>
                                             </div>
                                         </div>
                                     </div>

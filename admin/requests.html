@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TP Orthodontics - Cases</title>
+  <title>TP Orthodontics - User Requests</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="icon" type="image/png" sizes="32x32" href="../images/icon-tp.ico">
@@ -106,26 +106,6 @@
           </li>
         </ul>
       </nav>
-
-      <!-- Footer -->
-      <div class="border-t border-gray-700">
-        <ul>
-          <li>
-            <a href="./user-preferences.html" class="flex items-center space-x-3 py-3 px-6">
-              <i class="fa fa-gear"></i>
-              <span class="ml-3">Preferences</span>
-              <span class="bg-blue-500 text-white text-xs px-2 font-semibold rounded">All</span>
-            </a>
-          </li>
-          <li>
-            <a href="../login/login.html" class="flex items-center space-x-3 py-3 px-6">
-              <i class="fa fa-arrow-right-from-bracket"></i>
-              <span class="ml-3">Logout</span>
-              <span class="bg-blue-500 text-white text-xs px-2 font-semibold rounded">All</span>
-            </a>
-          </li>
-        </ul>
-      </div>
     </aside>
 
     <!-- Contenido Principal -->
@@ -133,8 +113,7 @@
 
       <!-- Navbar -->
       <header class="bg-white shadow flex justify-between items-center px-6 py-4">
-        <!-- <input type="text" placeholder="Search..." class="border rounded-lg p-2 w-1/3 focus:outline-none"> -->
-
+        <h1 class="text-xl font-semibold">User Requests</h1>
         <div class="flex items-center space-x-4">
           <button>
             <i class="fa fa-bell"></i>
@@ -146,88 +125,50 @@
 
       <!-- Área de Contenido -->
       <main class="flex-1 bg-gray-100 p-6">
-        <!-- 3D Viewer Section -->
-        <div class="bg-white p-6 rounded-lg shadow-lg mb-6">
-          <h2 class="text-2xl font-bold mb-6">3D Viewer</h2>
-          <iframe src="https://tpoviewer.tportho.com/index.html?mlink=https://tpoviewer.tportho.com/views/Client4318/61840/4EF9F3BE651B4B6AA7A488862820FA33.iiwgl&fg=459&bg=eee&p=UWMOHQ" 
-                  width="100%" height="600px" frameborder="0" allowfullscreen>
-          </iframe>
-        </div>
-      
-        <!-- Chat Section -->
         <div class="bg-white p-6 rounded-lg shadow-lg">
-          <h2 class="text-2xl font-bold mb-4">Chat</h2>
-      
-          <!-- Messages Area -->
-          <div id="chat-messages" class="border border-gray-300 rounded-lg p-4 h-64 overflow-y-auto mb-4 bg-gray-50">
-            <!-- Example Messages -->
-            <div class="mb-4">
-              <span class="text-gray-700 font-semibold">Omar Trejo:</span>
-              <p class="text-gray-600">The model looks good, but I need to validate it.</p>
-              <span class="text-sm text-gray-500">[Validated]</span>
-            </div>
-            <div class="mb-4">
-              <span class="text-gray-700 font-semibold">Admin:</span>
-              <p class="text-gray-600">Please let me know when you can review it.</p>
-              <span class="text-sm text-gray-500">[On Hold]</span>
-            </div>
-          </div>
-      
-          <!-- Input Form -->
-          <form id="chat-form" class="flex items-center space-x-4">
-            <input type="text" id="chat-input" class="flex-1 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
-                   placeholder="Type a message...">
-            <select id="chat-status" class="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-              <option value="Validated">Validated</option>
-              <option value="On Hold">On Hold</option>
-              <option value="In Progress">In Progress</option>
-            </select>
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
-              Send
-            </button>
-          </form>
+          <h2 class="text-2xl font-bold mb-6">Pending User Requests</h2>
+          <table class="min-w-full bg-white border">
+            <thead>
+              <tr>
+                <th class="py-2 px-4 border-b">ID</th>
+                <th class="py-2 px-4 border-b">Username</th>
+                <th class="py-2 px-4 border-b">Email</th>
+                <th class="py-2 px-4 border-b">Role</th>
+                <th class="py-2 px-4 border-b">Date Requested</th>
+                <th class="py-2 px-4 border-b">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="py-2 px-4 border-b">001</td>
+                <td class="py-2 px-4 border-b">JohnDoe</td>
+                <td class="py-2 px-4 border-b">johndoe@example.com</td>
+                <td class="py-2 px-4 border-b">Support</td>
+                <td class="py-2 px-4 border-b">2024-12-01</td>
+                <td class="py-2 px-4 border-b">
+                  <button class="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700" onclick="approveRequest(001)">Approve</button>
+                  <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-700" onclick="denyRequest(001)">Deny</button>
+                </td>
+              </tr>
+              <!-- Más filas de solicitudes -->
+            </tbody>
+          </table>
         </div>
       </main>
     </div>
   </div>
 
+  <script>
+    function approveRequest(id) {
+      alert(`Request ID ${id} approved.`);
+      // Aquí se puede implementar la lógica para enviar al backend
+    }
+
+    function denyRequest(id) {
+      alert(`Request ID ${id} denied.`);
+      // Aquí se puede implementar la lógica para enviar al backend
+    }
+  </script>
 </body>
 
 </html>
-
-<script>
-  function toggleMenu(menuId) {
-    const menu = document.getElementById(menuId);
-    menu.classList.toggle('hidden');
-  }
-
-  const form = document.getElementById('chat-form');
-  const chatMessages = document.getElementById('chat-messages');
-  const chatInput = document.getElementById('chat-input');
-  const chatStatus = document.getElementById('chat-status');
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const message = chatInput.value.trim();
-    const status = chatStatus.value;
-
-    if (message) {
-      // Create a new message
-      const newMessage = document.createElement('div');
-      newMessage.classList.add('mb-4');
-      newMessage.innerHTML = `
-        <span class="text-gray-700 font-semibold">You:</span>
-        <p class="text-gray-600">${message}</p>
-        <span class="text-sm text-gray-500">[${status}]</span>
-      `;
-      chatMessages.appendChild(newMessage);
-
-      // Clear input field
-      chatInput.value = '';
-
-      // Scroll to the latest message
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-  });
-</script>

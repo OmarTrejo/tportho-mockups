@@ -42,7 +42,7 @@
             </a>
             <ul id="cases-submenu" class="pl-4 mt-2 hidden">
               <li class="mb-2"><a href="./cases.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-list"></i> List cases</a></li>
-              <li class="mb-2"><a href="./case-add.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-ticket-alt"></i> Create case</a></li>
+              <li class="mb-2"><a href="./case-services.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-ticket-alt"></i> Create case</a></li>
               <li class="mb-2"><a href="./case-3d-model.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-user-edit"></i> Link 3D model</a></li>
               <li class="mb-2"><a href="./cases-logs.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-file-text"></i> Activy logs</a></li>
             </ul>
@@ -62,15 +62,15 @@
             </ul>
           </li>
           <li class="mb-4">
-            <a href="#" class="flex items-center space-x-3 py-3 px-6 rounded hover:bg-gray-800" onclick="toggleMenu('organizations-submenu')"> 
+            <a href="#" class="flex items-center space-x-3 py-3 px-6 rounded hover:bg-gray-800" onclick="toggleMenu('Country/DCs-submenu')"> 
               <i class="fa fa-building"></i> 
-              <span class="ml-3">Organizations</span> 
+              <span class="ml-3">Country/DCs</span> 
               <i class="fas fa-chevron-down"></i>
               <span class="bg-green-500 text-white text-xs px-2 font-semibold rounded">Admin</span>
             </a>
-            <ul id="organizations-submenu" class="pl-4 mt-2 hidden">
-              <li class="mb-2"><a href="./organizations.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-list"></i> List organizations</a></li>
-              <li class="mb-2"><a href="./organization-add.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-plus"></i> Create organization</a></li>
+            <ul id="Country/DCs-submenu" class="pl-4 mt-2 hidden">
+              <li class="mb-2"><a href="./Country/DCs.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-list"></i> List Country/DCs</a></li>
+              <li class="mb-2"><a href="./Country/DC-add.html" class="block py-2 px-4 rounded hover:bg-gray-700"><i class="fa fa-plus"></i> Create Country/DC</a></li>
             </ul>
           </li>
           </li>
@@ -82,10 +82,16 @@
             </a>
           </li>
           <li>
-            <a href="./logs.html" class="flex items-center space-x-3 py-3 px-6 hover:bg-gray-800">
+            <a href="./logs.html" class="flex items-center py-3 px-6 hover:bg-gray-800">
               <i class="fa fa-file-lines"></i>
               <span class="ml-3">Logs</span>
               <span class="bg-green-500 text-white text-xs px-2 font-semibold rounded">Admin</span>
+            </a>
+          </li><li>
+            <a href="./requests.html"  class="flex items-center py-3 px-6 hover:bg-gray-800">
+              <i class="fa fa-file-lines"></i>
+              <span class="ml-3">Requests Access </span>
+              <span class="bg-orange-500 text-white text-xs px-2 font-semibold rounded">Support</span>
             </a>
           </li>
         </ul>
@@ -160,7 +166,7 @@
                         <th class="py-2 px-4 border-b">Last Login</th>
                         <th class="py-2 px-4 border-b">MFA Active</th>
                         <th class="py-2 px-4 border-b">Status</th>
-                        <th class="py-2 px-4 border-b">Organization</th>
+                        <th class="py-2 px-4 border-b">Country/DC</th>
                         <th class="py-2 px-4 border-b">Actions</th>
                     </tr>
                 </thead>
@@ -175,7 +181,7 @@
                         <td class="py-2 px-4 border-b">2024-11-18 14:23:45</td>
                         <td class="py-2 px-4 border-b"><i class="fas fa-check text-green-500"></i></td>
                         <td class="py-2 px-4 border-b"><span class="text-green-500">Active</span></td>
-                        <td class="py-2 px-4 border-b">Organization A</td>
+                        <td class="py-2 px-4 border-b">Country/DC A</td>
                         <td class="py-2 px-4 border-b">
                             <button class="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-700"><i class="fa fa-trash"></i></button>
                             <button class="bg-yellow-500 text-white py-1 px-3 rounded hover:bg-yellow-700"><i class="fa fa-lock"></i></button>
@@ -191,7 +197,7 @@
                         <td class="py-2 px-4 border-b">2024-10-22 09:15:32</td>
                         <td class="py-2 px-4 border-b"><i class="fas fa-times text-red-500"></i></td>
                         <td class="py-2 px-4 border-b"><span class="text-red-500">Inactive</span></td>
-                        <td class="py-2 px-4 border-b">Organization B</td>
+                        <td class="py-2 px-4 border-b">Country/DC B</td>
                         <td class="py-2 px-4 border-b">
                             <button class="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-700"><i class="fa fa-trash"></i></button>
                             <button class="bg-yellow-500 text-white py-1 px-3 rounded hover:bg-yellow-700"><i class="fa fa-lock"></i></button>

@@ -146,46 +146,57 @@
 
       <!-- Área de Contenido -->
       <main class="flex-1 bg-gray-100 p-6">
-        <!-- 3D Viewer Section -->
-        <div class="bg-white p-6 rounded-lg shadow-lg mb-6">
-          <h2 class="text-2xl font-bold mb-6">3D Viewer</h2>
-          <iframe src="https://tpoviewer.tportho.com/index.html?mlink=https://tpoviewer.tportho.com/views/Client4318/61840/4EF9F3BE651B4B6AA7A488862820FA33.iiwgl&fg=459&bg=eee&p=UWMOHQ" 
-                  width="100%" height="600px" frameborder="0" allowfullscreen>
-          </iframe>
-        </div>
-      
-        <!-- Chat Section -->
         <div class="bg-white p-6 rounded-lg shadow-lg">
-          <h2 class="text-2xl font-bold mb-4">Chat</h2>
-      
-          <!-- Messages Area -->
-          <div id="chat-messages" class="border border-gray-300 rounded-lg p-4 h-64 overflow-y-auto mb-4 bg-gray-50">
-            <!-- Example Messages -->
-            <div class="mb-4">
-              <span class="text-gray-700 font-semibold">Omar Trejo:</span>
-              <p class="text-gray-600">The model looks good, but I need to validate it.</p>
-              <span class="text-sm text-gray-500">[Validated]</span>
-            </div>
-            <div class="mb-4">
-              <span class="text-gray-700 font-semibold">Admin:</span>
-              <p class="text-gray-600">Please let me know when you can review it.</p>
-              <span class="text-sm text-gray-500">[On Hold]</span>
-            </div>
+            <h2 class="text-2xl font-bold mb-6 text-center">Select Treatment Type</h2>
+
+      <!-- Options Menu -->
+      <div class="grid grid-cols-2 gap-4 mb-6">
+        <button class="bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600" onclick="showForm('TPO Aligner RX')">
+          TPO Aligner RX
+        </button>
+        <button class="bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600" onclick="showForm('Refine Aligner Finishing Appliance')">
+          Refine Aligner Finishing Appliance
+        </button>
+        <button class="bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600" onclick="showForm('Positioner RX')">
+          Positioner RX
+        </button>
+        <button class="bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600" onclick="showForm('Removable Appliance RX')">
+          Removable Appliance RX
+        </button>
+        <button class="bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600" onclick="showForm('Herbst RX')">
+          Herbst RX
+        </button>
+        <button class="bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600" onclick="showForm('Indirect Bonding')">
+          Indirect Bonding
+        </button>
+        <button class="bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600" onclick="showForm('Active Appliance RX')">
+          Active Appliance RX
+        </button>
+        <button class="bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600" onclick="showForm('Digital Archive')">
+          Digital Archive
+        </button>
+      </div>
+
+      <!-- Form -->
+      <div id="form-container" class="hidden">
+        <form id="treatment-form" class="space-y-4">
+          <div>
+            <label for="patient-name" class="block text-gray-700">Patient Name</label>
+            <input type="text" id="patient-name" class="w-full px-4 py-2 border rounded-lg" placeholder="Enter patient name" required>
           </div>
-      
-          <!-- Input Form -->
-          <form id="chat-form" class="flex items-center space-x-4">
-            <input type="text" id="chat-input" class="flex-1 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
-                   placeholder="Type a message...">
-            <select id="chat-status" class="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-              <option value="Validated">Validated</option>
-              <option value="On Hold">On Hold</option>
-              <option value="In Progress">In Progress</option>
-            </select>
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
-              Send
-            </button>
-          </form>
+          <div>
+            <label for="treatment-type" class="block text-gray-700">Treatment Type</label>
+            <input type="text" id="treatment-type" class="w-full px-4 py-2 border rounded-lg" readonly required>
+          </div>
+          <div>
+            <label for="additional-info" class="block text-gray-700">Additional Information</label>
+            <textarea id="additional-info" class="w-full px-4 py-2 border rounded-lg" placeholder="Add any additional details if necessary"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">
+            Save Treatment
+          </button>
+        </form>
+      </div>
         </div>
       </main>
     </div>
@@ -201,33 +212,15 @@
     menu.classList.toggle('hidden');
   }
 
-  const form = document.getElementById('chat-form');
-  const chatMessages = document.getElementById('chat-messages');
-  const chatInput = document.getElementById('chat-input');
-  const chatStatus = document.getElementById('chat-status');
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const message = chatInput.value.trim();
-    const status = chatStatus.value;
-
-    if (message) {
-      // Create a new message
-      const newMessage = document.createElement('div');
-      newMessage.classList.add('mb-4');
-      newMessage.innerHTML = `
-        <span class="text-gray-700 font-semibold">You:</span>
-        <p class="text-gray-600">${message}</p>
-        <span class="text-sm text-gray-500">[${status}]</span>
-      `;
-      chatMessages.appendChild(newMessage);
-
-      // Clear input field
-      chatInput.value = '';
-
-      // Scroll to the latest message
-      chatMessages.scrollTop = chatMessages.scrollHeight;
+  function showForm(treatmentType) {
+      // Show the form and set the selected treatment type
+      document.getElementById('form-container').classList.remove('hidden');
+      document.getElementById('treatment-type').value = treatmentType;
     }
-  });
+
+    // Redirect to case-add.html on form submission
+    document.getElementById('treatment-form').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent default form submission behavior
+      window.location.href = './case-add.html'; // Redirect to case-add.html
+    });
 </script>
